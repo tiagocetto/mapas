@@ -1,4 +1,17 @@
- // Create the search box and link it to the UI element.
+
+function initAutocomplete() {
+ var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 11,
+    center: {lat: 41.876, lng: -87.624}
+  });
+  
+  var ctaLayer = new google.maps.KmlLayer({
+    url: 'https://raw.githubusercontent.com/tiagocetto/mapas/master/teste%20mapa%20(17).kml',
+    map: map
+  }); 
+
+
+// Create the search box and link it to the UI element.
   var input = document.getElementById('pac-input');
   var searchBox = new google.maps.places.SearchBox(input);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
@@ -56,3 +69,4 @@
     });
     map.fitBounds(bounds);
   });
+}
